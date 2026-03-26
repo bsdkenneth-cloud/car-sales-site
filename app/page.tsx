@@ -1,3 +1,5 @@
+import { prisma } from '@/lib/prisma'
+
 type Vehicle = {
   id: number
   model: string
@@ -9,9 +11,9 @@ type Vehicle = {
 }
 
 async function getVehicles(): Promise<Vehicle[]> {
-  const res = await fetch('http://localhost:3000/api/vehicles', { cache: 'no-store' }).catch(() => null)
-  if (!res || !res.ok) return []
-  return (await res.json()) as Vehicle[]
+  return prisma.vehicle.findMany({
+    orderBy: { createdAt: 'desc' },
+  })
 }
 
 export default async function Home() {
