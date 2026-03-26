@@ -1,0 +1,30 @@
+[
+  {
+    "model": "Mercedes C300 AMG Line",
+    "year": 2021,
+    "mileage": 28000,
+    "options": "Sunroof, Burmester audio, 360 camera",
+    "cost": 26800
+  },
+  {
+    "model": "Mercedes C300 Avantgarde",
+    "year": 2020,
+    "mileage": 36000,
+    "options": "Leather seats, keyless, Apple CarPlay",
+    "cost": 24500
+  },
+  {
+    "model": "BMW 330i M Sport",
+    "year": 2021,
+    "mileage": 24000,
+    "options": "HUD, adaptive cruise",
+    "cost": 28900
+  },
+  {
+    "model": "Mercedes C300 4MATIC",
+    "year": 2022,
+    "mileage": 18000,
+    "options": "AMG package, 19-inch wheels",
+    "cost": 31200
+  }
+]

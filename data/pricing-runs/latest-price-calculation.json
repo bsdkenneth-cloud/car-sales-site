@@ -1,0 +1,37 @@
+{
+  "task": "price_calculator",
+  "ranAt": "2026-03-26T06:21:38.401Z",
+  "inputs": {
+    "cost": 27000,
+    "displacement": 2000,
+    "freight": 1500,
+    "insurance": 300,
+    "marginRate": 0.15,
+    "opsBuffer": 3000,
+    "search": "Mercedes C300"
+  },
+  "breakdown": {
+    "landedCost": 28800,
+    "annualTax": 17410,
+    "subtotalBeforeMargin": 49210,
+    "suggestedPrice": 56600
+  },
+  "updatedCount": 2,
+  "updatedVehicles": [
+    {
+      "id": 1,
+      "model": "Mercedes C300 AMG Line",
+      "year": 2021,
+      "cost": 27000,
+      "price": 56600
+    },
+    {
+      "id": 2,
+      "model": "Mercedes C300 Avantgarde",
+      "year": 2020,
+      "cost": 27000,
+      "price": 56600
+    }
+  ],
+  "note": "Matched vehicles were updated in Prisma."
+}

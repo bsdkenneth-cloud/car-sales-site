@@ -1,0 +1,28 @@
+{
+  "task": "manheim_scraper",
+  "ranAt": "2026-03-26T06:21:38.370Z",
+  "criteria": {
+    "search": "Mercedes C300",
+    "max_price": 30000,
+    "source": "C:\\Users\\bsdke\\projects\\car-sales-site\\data\\manheim-sample.json"
+  },
+  "totalSourceRecords": 4,
+  "matchedRecords": 2,
+  "createdCount": 0,
+  "skippedCount": 2,
+  "created": [],
+  "skipped": [
+    {
+      "id": 1,
+      "model": "Mercedes C300 AMG Line",
+      "year": 2021,
+      "cost": 26800
+    },
+    {
+      "id": 2,
+      "model": "Mercedes C300 Avantgarde",
+      "year": 2020,
+      "cost": 24500
+    }
+  ]
+}
