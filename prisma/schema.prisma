@@ -15,6 +15,7 @@ model Vehicle {
  cost Float
  price Float
  createdAt DateTime @default(now())
+ updatedAt DateTime @default(now()) @updatedAt
  orders Order[]
 }
 model Customer {
@@ -23,14 +24,16 @@ model Customer {
  email String @unique
  phone String?
  createdAt DateTime @default(now())
+ updatedAt DateTime @default(now()) @updatedAt
  orders Order[]
 }
 model Order {
  id Int @id @default(autoincrement())
  customerId Int
  vehicleId Int
- status String @default("pending")
+ status String @default("new")
  createdAt DateTime @default(now())
+ updatedAt DateTime @default(now()) @updatedAt
  customer Customer @relation(fields: [customerId], references: [id])
  vehicle Vehicle @relation(fields: [vehicleId], references: [id])
 }

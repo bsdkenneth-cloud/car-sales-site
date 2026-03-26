@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { sendInquiryNotifications } from '@/lib/notifications'
 
 export async function POST(request: NextRequest) {
   const body = await request.json()
@@ -26,7 +27,7 @@ export async function POST(request: NextRequest) {
     data: {
       customerId: customer.id,
       vehicleId: Number(vehicleId),
-      status: notes ? `inquiry:${notes}` : 'pending',
+      status: 'new',
     },
     include: {
       customer: true,
@@ -34,5 +35,13 @@ export async function POST(request: NextRequest) {
     },
   })
 
-  return NextResponse.json({ ok: true, order }, { status: 201 })
+  const notificationResults = await sendInquiryNotifications({
+    customerName: customer.name,
+    email: customer.email,
+    phone: customer.phone,
+    vehicleLabel: `${order.vehicle.year} ${order.vehicle.model}`,
+    notes: notes || null,
+  })
+
+  return NextResponse.json({ ok: true, order, notifications: notificationResults }, { status: 201 })
 }
